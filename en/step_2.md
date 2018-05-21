@@ -2,12 +2,12 @@
 
 ### Hardware
 
-+ List hardware here, or delete section.
++ A computer capable of accessing App Inventor
 
-### Software
++ An internet connection
 
-+ List software here, or delete section.
+**Optional:**
 
-### Additional Resources
++ An Android phone or tablet
 
-+ List additional resources, or delete section.
+

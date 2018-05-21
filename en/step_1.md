@@ -1,25 +1,19 @@
 ## Introduction
 
-Add project description here. What will learners be making?
+These are the advanced App Inventor Sushi Cards. In them you'll learn how to add cool features like location and maps to your Android app.
 
 ### What you will make
 
-Add something here to showcase here, for example:
-
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
-
-Add instructions here. These should explain either how the finished project will work, or explain how to interact with the content above.
+You will make an app that people can use to find accessible places near them and and even have their device open up a map showing the location of a selected place.
+ 
+![](images/all app.png)
 
 ### What you will learn
 
-This project covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](http://rpf.io/curriculum){:target="_blank"}:
-
-+ [Add curriculum strand/level description.](https://www.raspberrypi.org/curriculum/strand/level){:target="_blank"}
-
-### Additional information for educators
-
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/project-name/print){:target="_blank"}.
-
-Use the link in the footer to access the GitHub repository for this project, which contains all resources (including an example finished project) in the 'en/resources' folder.
++ Using Layout Arrangements
++ Adding images
++ Getting a user's location
++ Showing and hiding elements
++ Waiting for lengths of times
++ Saving and retrieving online data with other users
++ Communicating with other apps
