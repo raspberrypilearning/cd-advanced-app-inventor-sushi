@@ -1,8 +1,8 @@
 ## Showing locations in a maps app
 
-Wow! You’ve done so much, and the app is nearly finished. The last thing to do is to show people how they can get to a place. 
+Wow! You’ve done so much, and the app is nearly finished. The last thing to do is to show people how they can get to a litter bin. 
 
-In programming they say everyone builds "standing on the shoulders of giants". This means that you create programs by using what has already been done. In your case, to give people directions to a place, it would be best to use a maps application that's already installed.
+In programming they say everyone builds "standing on the shoulders of giants". This means that you create programs by using what has already been done. In your case, to give people directions to a litter bin, it would be best to use a maps application that's already installed.
 
 On Android, this can be done by using the **StartActivity** method. This is part of the Android operating system and allows for applications to launch activities such as opening another app, taking a picture, etc. App Inventor can also run this method, but to do so, it needs a new component. 
 
@@ -30,4 +30,4 @@ The `geo` part tells Android that you want a map, and the `?q=` part says that y
 
 + Lastly, drag an `ActivityStarter.StartActivity` block into the previous block.
 
-![](images/showLocationInMapsApp.png)
+![Code to open a map for the selected item](images/showLocationInMapsApp.png)

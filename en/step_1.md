@@ -4,9 +4,9 @@ These are the advanced App Inventor Sushi Cards. In them you'll learn how to add
 
 ### What you will make
 
-You will make an app that people can use to find accessible places near them and and even have their device open up a map showing the location of a selected place.
+You will make an app that people can use to find litter bins near them and and even have their device open up a map showing the location of a selected bin.
  
-![](images/all app.png)
+![Litter bin finder app](images/all app.png)
 
 ### What you will learn
 

@@ -1,8 +1,8 @@
 ## Getting the user's location
 
-If you want to know where the accessible places near you are, you are going to need users to add their locations to your app. Luckily, App Inventor has a **LocationSensor** component that detects a user's location.
+If you want to know where the litter bins are, you are going to need users to add their locations to your app. Luckily, App Inventor has a **LocationSensor** component that detects a user's location.
 
-+ On the "AddPlace" screen, drag a LocationSensor from **Sensors** onto your app.
++ On the "AddABin" screen, drag a LocationSensor from **Sensors** onto your app.
 
 You’re now going to get the user’s location and put it into the **TextBox**.
 
@@ -25,11 +25,11 @@ I like giving my components identifiable names.
 
 + Now drag a `LocationSensor.CurrentAddress` block out and attach it to the `set TextBox.Text` block.
 
-![](images/getUserLocation.png)
+![Code to get the current location](images/getUserLocation.png)
 
 Great! Now when you click on "GetLocation", the TextBox’s text will be set to your current address from the LocationSensor.
 
-You need to be careful though: it's a good idea to check that there is always an address in the TextBox before adding a new place! You need to **validate the input**.
+You need to be careful though: it's a good idea to check that there is always an address in the TextBox before adding a new bin! You need to **validate the input**.
 
 + Drag out an `if, then, else` block, and put it into the `when Save.Click` block.
 
@@ -37,7 +37,7 @@ You need to be careful though: it's a good idea to check that there is always an
 
 + OK, now you can check whether the TextBox is empty, but you want to check if it is **not** empty. To do this, get a `not` block out and put it before the `is empty` block.
 
-![](images/checkIfTextBoxEmpty.png)
+![Code to validate the input](images/checkIfTextBoxEmpty.png)
 
 One last thing: you need to tell the user that the TextBox is empty.
 

@@ -2,7 +2,7 @@
 
 Don’t worry, I’ll kept the maths to a minimum. You’ll have no problem understanding it, and anyway, you’re going to be programming a computer to do the maths for you!
 
-What you want is to only show places that are close to where a user currently is. To do this, you need to find the distance between two addresses.
+What you want is to only show litter bins that are close to where a user currently is. To do this, you need to find the distance between two addresses.
 
 To explain how this works, I'll be talking about three things:
   1. Latitude
@@ -37,6 +37,6 @@ He came up with this equation ![](images/pythagorasTheorem.png)  where Z is the 
 ![](images/pythagorasTheorem4.png)
 ![](images/pythagorasTheorem5.png)
 
-Tada! With this method, you can work out the distance between any person and the location of an accessible place! Pretty cool, right?
+Tada! With this method, you can work out the distance between any person and the location of a litter bin! Pretty cool, right?
 
 On the next card, you will write a **procedure** that does this calculation for you.

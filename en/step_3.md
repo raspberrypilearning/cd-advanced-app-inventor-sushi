@@ -1,12 +1,12 @@
 ## Creating the layout
 
-+ Create a new project in App Inventor and name it `AccessApp`, or come up with a catchier name of your own!
++ Create a new project in App Inventor and name it `LitterBinFinder`, or come up with a name of your own!
 
-+ First you're going to set up a home screen. Add a label and two buttons to your app. Make the label say the name of the app, and set the texts of the buttons to "Add a place" and "Nearest accessible place".
++ First you're going to set up a home screen. Add a label and two buttons to your app. Make the label say the name of the app, and set the texts of the buttons to "Add a litter bin" and "Where is my nearest litter bin".
 
 Now I don’t know about you, but I think the title should be bigger!
 
-+ Go to the label’s Properties and change the FontSize to something nice and large. I chose 28, but you could go bigger!
++ Go to the label’s Properties and change the FontSize to something nice and large. I chose 40, but you could go bigger!
 
 Now since you have that new, nice, large title, you can get rid of one at the top of the screen.
 
@@ -14,11 +14,11 @@ Now since you have that new, nice, large title, you can get rid of one at the to
 
 + Those buttons are a bit small too, so go to their Properties and change their widths to `Fill parent`.
 
-+ Finally, let’s add an image. Find or draw a suitable image or use the one here: [dojo.soy/accessicon](http://dojo.soy/accessicon){:target="_blank}. 
++ Finally, let’s add an image. Find or draw a suitable image or use the one here: [dojo.soy/litterbin](http://dojo.soy/litterbin){:target="_blank}. 
 
 + Now get an Image component and drag it onto the screen. In its Properties, find **Picture**, then **Upload File**, and upload the image you want to use.
 
-![](images/upload_image.png)
+![Upload a picture](images/upload_image.png)
 
 --- collapse ---
 ---
@@ -50,15 +50,15 @@ If you're using a picture that's too big, no problem!
 
 + Awesome! You’ve just finished the first screen. Here’s what mine looks like:
 
-![](images/screen1.png)
+![The completed first screen with a title, image, and two buttons](images/screen1.png)
 
-+ Now make another screen named "AddPlace".
++ Now make another screen named "AddABin".
 
-+ Like before, add a Label with the screen's title. Also add another Label saying "Location:", a TextBox, and two Buttons saying "Current Location" and "Save Place".
++ Like before, add a Label with the screen's title. Also add another Label saying "Location:", a TextBox, and two Buttons saying "Current Location" and "Save Bin".
 
 + Now try out some of your new skills. Give the TextBox a width of "Fill parent" and use two HorizontalArrangements to center both Buttons.
 
-![](images/componenetsInAddPlace.png)
+![The Add A Bin screen with title, location textbox and two buttons](images/componenetsInAddPlace.png)
 
 It might look better if the save button was at the very bottom.
 
@@ -66,9 +66,9 @@ It might look better if the save button was at the very bottom.
 
 + Awesome! You should have something like this:
 
-![](images/AddPlace.png)
+![The save button moved to the bottom](images/AddPlace.png)
 
-+ Now you just need to add one more screen. Name it "ListOfPlaces".
++ Now you just need to add one more screen. Name it "ListOfBins".
 
 + This one is really simple: drag a ListView out and change its Height to `Fill parent`.
 

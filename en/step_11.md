@@ -1,6 +1,6 @@
 ## Wrapping Up
 
-You’ve finished — you now have a app that can add locations of accessible places to a shared database and then show people the places in the database that are near to them.
+You’ve finished — you now have a app that can add locations of litter bins to a shared database and then show people the litter bins in the database that are near to them.
 
 But wait! One last thing!
 
@@ -18,7 +18,7 @@ But wait! One last thing!
 
 + Here is the code you need to add to the home screen:
 
-![](images/navigationCode.png)
+![Code to make each of the two home screen buttons open another screen](images/navigationCode.png)
 
 --- /hint ---
 
@@ -30,10 +30,10 @@ That's it — you're done! I wonder what else you can do now with all the things
 
 --- collapse ---
 ---
-title: Show the distance to places
+title: Show the distance to litter bins
 ---
 
-+ At the moment, you get rid of all places that are further than 5km, but the user can’t see the distance to an individual place. How about adding another Label to the list containing the distance to that place!
++ At the moment, you get rid of all litter bins that are further than 5km, but the user can’t see the distance to an individual bin. How about adding another Label to the list containing the distance to that bin!
 
 --- /collapse ---
 
@@ -46,14 +46,14 @@ On the topic of working out the distances, the method you are using to work out 
 
 + How about you try to build an even better system? Look up "App Inventor working out distances" in a search engine.
 
---- /collapse
+--- /collapse ---
 
 --- collapse ---
 ---
 title: Use a map instead of typing addresses
 ---
 
-+ Or maybe you could add a map to the "AddPlace" screen. At the moment, you have to type in an address, but what if you could just find it on a map. That would be even cooler!
++ Or maybe you could add a map to the "AddABin" screen. At the moment, you have to type in an address, but what if you could just find it on a map. That would be even cooler!
 
 --- /collapse ---
 
@@ -66,4 +66,4 @@ title: Make a different app!
 
 --- /collapse ---
 
-You can see an example of this app on App Inventor at [dojo.soy/advancedapp](http://dojo.soy/advancedapp){:target="_blank"}.
+You can see an example of this app on App Inventor at [dojo.soy/binapp](http://dojo.soy/binapp){:target="_blank"}.
