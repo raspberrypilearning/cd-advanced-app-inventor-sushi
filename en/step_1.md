@@ -5,10 +5,13 @@ These are the advanced App Inventor Sushi Cards. In them you'll learn how to add
 ### What you will make
 
 You will make an app that people can use to find litter bins near them and and even have their device open up a map showing the location of a selected bin.
- 
+
 ![Litter bin finder app](images/all app.png)
 
-### What you will learn
+--- collapse ---
+---
+title: What you will learn
+---
 
 + Using Layout Arrangements
 + Adding images
@@ -17,3 +20,22 @@ You will make an app that people can use to find litter bins near them and and e
 + Waiting for lengths of times
 + Saving and retrieving online data with other users
 + Communicating with other apps
+
+--- /collapse ---
+
+--- collapse ---
+---
+title: What you will need
+---
+
+### Hardware
+
++ A computer capable of accessing App Inventor
+
++ An internet connection
+
+**Optional:**
+
++ An Android phone or tablet
+
+--- /collapse ---

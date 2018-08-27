@@ -1,87 +1,37 @@
-## Saving data to Firebase
+## Displaying data in the ListView
 
-To allow for all users of your app to see all the litter bins, you need to store the data online. To do this, App Inventor has a web database you can write values to and later get back.
+The next step in the making of your app is creating a way to see all the litter bins. You want to program it so that it finds all the bin entries and then adds each one as an element of the ListView in the ListOfBins screen. To do this, you are to need the FirebaseDB component again.
 
-+ Staying on the **AddABin** screen, go to the **Designer** view and drag a **FirebaseDB** (**Palette** > **Experimental**) component into your app. Don't worry if you get a popup message, just go ahead and click **OK**.
++ Switch to the ListOfBins screen and drag out a FirebaseDB component onto the Designer view.
 
-+ Back in the Blocks view, add a `call FirebaseDB.StoreValue` block.
++ Now switch over to the Blocks view, and take out a `when ListOfBins.Initialize` block. Everything in this will run as soon as this screen opens up.
 
---- collapse ---
----
-title: What are tags and values?
----
++ Place a `call FireBase.GetTagList` block inside this block. This tells Firebase to return a list containing the tags of all saved data in your database.
 
-You can see that the `StoreValue` block is asking for two values:
-  + The **tag** is an unique identifier that you will use to retrieve the data later
-  + The **value** is the data that you want to save
+![Code to get the tags when the screen loads](images/firebaseGetTagList.png)
 
-The important thing is that a **tag** has to be unique (i.e. it is only used once). You need to make sure that nobody ever reuses the same tag. If this were to happen, then the data with that tag would be lost!
++ Take out a `when FireBase.TagList` block and insert a `for each item in list` block inside it. This function will run as soon as Firebase gets our collection of tags in the form of a list, which it uses as the `value` variable.
 
-To make sure this doesn't happen, you will tell Firebase to store a value `BinNumber` that you will keep adding to. This will then be your tag.
+With the `for` loop you now have individual tags being set to the item variable. Of course you don’t want the tag, you want the address, and you'll use the tag to get it. 
 
---- /collapse ---
+Grab a `call Firebase.GetValue` block, and set the tag to the `item` variable, since this contains the current tag from the `value` list.
 
-+ Add a `call Firebase.GetValue` block to the `then` statement in the `when Save.Click` block.
+![](images/firebaseTagList.png)
 
-+ Add a `text` block with `"BinNumber"` as the tag and a `0` block for the **ValueIfTagNotThere**:
++ Add a `when Firebase.GotValue` block, and put a `add items to list` block inside it.
 
-![Code to get the value from Firebase](images/getPlaceNumber.png)
++ You will need a list to add locations to, so add an `initialize global name` block. Change its `name` to `locations` and drag a `create empty list` block onto the end of it.
 
---- collapse ---
----
-title: Why is the value not returned?
----
++ Now attach a `get global locations` block to the list attachment of the `add items to list` block, and a `get value` block to the item attachment. The `value` variable contains the address of the bin.
 
-Right now, your code asks Firebase for the current amount of bins. Firebase will look for this and once it finds the value, it will call another function, in this case `GotValue`.
+**Note**: the list of tags will also contain the `"BinNumber"` tag that you're using to keep count of the bins, so you'll need to exclude that from the list you display.
 
-This is known as an **asynchronous call** and means your app can keep running while it waits for Firebase!
++ Add an `if then` block from Control to your `GotValue` block, and move the `add items to list` code so it's inside the `then` block.
 
---- /collapse ---
++ Onto the `if` part: attach a `not` and an `=` from Logic. Hover over the `tag` variable and put a `get tag` on the left of the `=`. tThen put a `""` Text block on the right and type `"BinNumber"` into it.
 
-+ Once Firebase finds the value, it will run the `GotValue` function. So go ahead and add a `when Firebase.GotValue` block, so you can run some code when this happens.
+![Code to add values to the list](images/ifTagNotPlaceNumber.png)
 
-+ Firstly you need to increment the amount of the bins (as you are adding a new one). Hover over `value` and drag out a `set value to` block. Put this into the `when Firebase.GotValue` block. Also take out a `get value` block.
++ Lastly you need to tell the ListView to get its elements from your list. Get a `set ListView.Elements` block and attach a `get global locations` block to it.
 
-+ From Math, drag out the `+` block along with a `0` block. Set the `0` block to `1`.
-
-+ Place the `get value` and `0` blocks into the `+` block, and attach it to the `set value to` block.
-
-![Code for when the value is received from Firebase](images/firebaseGotPlaceNumber.png)
-
-+ Now you have your a unique tag: you have just increased the `"BinNumber"` by `1`. The next time someone adds a bin, they will also automatically increase the `"BinNumber"`, so your **tag** will always stay unique!
-
-+ Drag the `call FirebaseDB.StoreValue` block you added earlier to below the `set value to` block:
-
-![Code to store the value](images/firebaseStoreLocation.png)
-
-This block tells the Firebase database to store the location (the address in the TextBox). When you want to find the address again, you can use its tag (its value of `"BinNumber"`).
-
-+ Connect a `get value` block to the `tag` attachment, and a `TextBox.text` to the `value` attachment.
-
-+ The only thing left to do is to change the amount of bins in Firebase. This code for this is exactly the same as the previous block, just with the tag and value changed. Try it yourself! It should go just below the previous `call Firebase.StoreValue` block.
-
---- hints ---
-
---- hint ---
-
-+ The value you want to store is the new value for the number of bins.
-
-+ Use the tag you defined earlier for getting and storing the current bin number.
-
---- /hint ---
-
---- hint ---
-
-+ To update the bin number, you need `call FirebaseDB.StoreValue` with a `tag` of `"BinNumber"` and a `value` of `get value`. Here is what the code looks like:
-
-![Code to store the updated bin number in Firebase](images/firebaseStorePlaceNumber.png)
-
---- /hint ---
-
---- /hints ---
-
-+ Fantastic! Now you can add new bins to the app. Just add an `open another screen screenName` block and attach it to a `""` block. Type in `Screen1` here, so you can get back to the home screen.
-
-Your `GotValue` code should look like this now:
-
-![The completed GotValue code](images/gotValueDone.png)
+![The completed GotValue code](images/firebaseGotLocation.png)
